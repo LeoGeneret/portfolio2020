@@ -1,0 +1,48 @@
+#Projects {
+  z-index: 999;
+  position: relative;
+  height: 100vh;
+  top: 0;
+}
+
+#Projects .bandsContainer {
+  height: 100vh;
+  font-family: "Neue Machina";
+  top: 0;
+}
+
+#Projects .bandsContainer .band {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 25%;
+  top: 0;
+}
+
+#Projects .bandsContainer .one {
+  left: 100%;
+  top: 0;
+}
+
+#Projects .bandsContainer .two {
+  right: 100%;
+  top: 0;
+}
+
+#Projects .bandsContainer .three {
+  left: 100%;
+}
+
+#Projects .bandsContainer .four {
+  right: 100%;
+}
+
+#Projects .bandsContainer p {
+  color: black;
+  background-color: white;
+  font-size: 25vh;
+  height: 100%;
+  display: block;
+  padding-top: 20px;
+}
+/*# sourceMappingURL=projects.css.map */

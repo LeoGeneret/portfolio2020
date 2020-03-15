@@ -1,0 +1,156 @@
+
+.Hero {
+
+    height: 100vh;
+    width: 100vw;
+    padding: 50px 10vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+  
+    // @include mobileOnly {
+    //   height: inherit;
+    // }
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 0;
+  
+      &::after{
+        background-color: #fff;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        position: absolute;
+      }
+  
+      > div {
+        overflow: hidden;
+      }
+      .nameContainer {
+        overflow: hidden;
+        padding-bottom: 14px;
+        transform: translateY(100%);
+        
+        h1 {
+          font-family: "Lausanne";
+          color: white;
+          font-size: 20px;
+          height: 100%;
+        }
+      }
+  
+      .colorToggle {
+        background-color: white;
+        border-radius: 50px;
+        width: 20px;
+        padding-bottom: 14px;
+        box-sizing: border-box;
+        height: 20px;
+        transition: transform 0.2s ease-out;
+  
+        &:hover {
+        transform: scale(1.25);
+        }
+      }
+    }
+  
+    .centralSection {
+      color: white;
+      font-family: "Lausanne";
+      font-size: 5em;
+      transform: translateZ(0); /*for older browsers*/
+      will-change: transform;
+      opacity: 0;
+      transform: translateY(50px);
+      padding: 30px 0 30px 0;
+      hyphens: manual;
+      overflow-wrap: break-word;
+  
+  
+        @include mobileOnly {
+          font-size: 2.8em;
+  
+          p{
+            text-align: left!important;
+          }
+        }
+      
+  
+      p {
+        // word-break: break-all;
+        overflow-wrap: break-word;
+        filter: url("#liquify"); 
+  
+        @include forTactile {
+          filter: none;
+        }
+  
+      }
+  
+      span {
+        color: transparent;
+        text-shadow: 0 0 13px rgb(255, 255, 255);
+      }
+  
+      .secondline {
+        text-align: center;
+      }
+      .thirdline, .fourthline {
+        text-align: right;
+      }
+    }
+  
+    .footer {
+      font-family: "Lausanne";
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      width: 100%;
+      flex-wrap: wrap;
+      overflow: hidden;
+  
+      .contactLinks {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          transform: translateY(100%);
+        }
+  
+        a {
+          margin-right: 20px;
+          padding-bottom: 10px;
+  
+          &:hover {
+            transform: rotate3d(1, 0, 0, 180deg) translateY(13px)!important;
+          }
+        }
+      }
+  
+      .cities {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        transform: translateY(100%);
+  
+        p {
+          padding-bottom: 10px;
+        }
+  
+        p:nth-of-type(1) {
+          text-decoration: line-through;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  

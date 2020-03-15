@@ -1,0 +1,21 @@
+// RESPONSIVE
+@mixin mobileOnly {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin mobileandtablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin forTactile {
+    @media (hover: none) {
+        @content
+    }
+}

@@ -1,0 +1,10 @@
+@import 'reset';
+@import 'mixins';
+@import 'vars';
+@import 'fonts';
+
+// LIBS
+@import '../components/locomotive-scroll.scss';
+
+@import '../components/hero.scss';
+@import '../components/projects.scss';

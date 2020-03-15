@@ -1,0 +1,51 @@
+#Projects {
+    z-index: 999;
+    position: relative;
+    height: 100vh;
+    top: 0;
+
+    .bandsContainer {
+        height: 100vh;
+        font-family: "Neue Machina";
+        top: 0;
+
+        .band {
+            width: max-content;
+            height: 25%;
+            top: 0;
+        }
+
+        .one {
+            // transform: rotate(10deg);
+            left: 100%;
+            top: 0;
+
+        }
+        .two {
+            // transform: rotate(-10deg);
+            right: 100%;
+            top: 0;
+
+        }
+        .three {
+            // transform: rotate(12deg);
+            left: 100%;
+
+        }
+        .four {
+            // transform: rotate(-12deg);
+            right: 100%;
+
+        }
+    
+        p {
+            color: black;
+            background-color: white;
+            font-size: 25vh;
+            height: 100%;
+            display: block;
+            padding-top: 20px;
+
+        }
+    }
+}   
