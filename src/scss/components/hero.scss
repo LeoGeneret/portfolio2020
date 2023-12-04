@@ -1,156 +1,194 @@
-
 .Hero {
+  height: 100vh;
+  width: 100vw;
+  padding: 50px 10vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
 
-    height: 100vh;
-    width: 100vw;
-    padding: 50px 10vw;
-    box-sizing: border-box;
+  // @include mobileOnly {
+  //   height: inherit;
+  // }
+
+
+  .header {
     display: flex;
-    flex-direction: column;
+    font-family: "Neue Machina Light";
     justify-content: space-between;
-    position: fixed;
-  
-    // @include mobileOnly {
-    //   height: inherit;
-    // }
-  
-    .header {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin-bottom: 0;
-  
-      &::after{
-        background-color: #fff;
-        bottom: 0;
-        content: "";
-        height: 2px;
-        position: absolute;
-      }
-  
-      > div {
-        overflow: hidden;
-      }
-      .nameContainer {
-        overflow: hidden;
-        padding-bottom: 14px;
-        transform: translateY(100%);
-        
-        h1 {
-          font-family: "Lausanne";
-          color: white;
-          font-size: 20px;
-          height: 100%;
-        }
-      }
-  
-      .colorToggle {
-        background-color: white;
-        border-radius: 50px;
-        width: 20px;
-        padding-bottom: 14px;
-        box-sizing: border-box;
-        height: 20px;
-        transition: transform 0.2s ease-out;
-  
-        &:hover {
-        transform: scale(1.25);
-        }
-      }
+    position: relative;
+    margin-bottom: 0;
+
+    &::after {
+      background-color: #fff;
+      bottom: 0;
+      content: "";
+      height: 2px;
+      position: absolute;
     }
-  
-    .centralSection {
-      color: white;
-      font-family: "Lausanne";
-      font-size: 5em;
-      transform: translateZ(0); /*for older browsers*/
-      will-change: transform;
-      opacity: 0;
-      transform: translateY(50px);
-      padding: 30px 0 30px 0;
-      hyphens: manual;
-      overflow-wrap: break-word;
-  
-  
-        @include mobileOnly {
-          font-size: 2.8em;
-  
-          p{
-            text-align: left!important;
-          }
-        }
-      
-  
-      p {
-        // word-break: break-all;
-        overflow-wrap: break-word;
-        filter: url("#liquify"); 
-  
-        @include forTactile {
-          filter: none;
-        }
-  
-      }
-  
-      span {
-        color: transparent;
-        text-shadow: 0 0 13px rgb(255, 255, 255);
-      }
-  
-      .secondline {
-        text-align: center;
-      }
-      .thirdline, .fourthline {
-        text-align: right;
-      }
-    }
-  
-    .footer {
-      font-family: "Lausanne";
-      font-size: 18px;
-      display: flex;
-      justify-content: space-between;
-      color: white;
-      width: 100%;
-      flex-wrap: wrap;
+
+    > div {
       overflow: hidden;
-  
-      .contactLinks {
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-        
-        > div {
-          display: flex;
-          flex-wrap: wrap;
-          transform: translateY(100%);
-        }
-  
-        a {
-          margin-right: 20px;
-          padding-bottom: 10px;
-  
-          &:hover {
-            transform: rotate3d(1, 0, 0, 180deg) translateY(13px)!important;
-          }
-        }
+    }
+    .nameContainer {
+      overflow: hidden;
+      padding-bottom: 14px;
+      transform: translateY(100%);
+
+      h1 {
+        color: white;
+        font-size: 20px;
+        height: 100%;
       }
-  
-      .cities {
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-        transform: translateY(100%);
-  
-        p {
-          padding-bottom: 10px;
-        }
-  
-        p:nth-of-type(1) {
-          text-decoration: line-through;
-          margin-right: 20px;
-        }
+    }
+
+    p {
+      color: white;
+      line-height: 20px;
+    }
+
+    .colorToggle {
+      background-color: white;
+      border-radius: 50px;
+      width: 20px;
+      padding-bottom: 14px;
+      box-sizing: border-box;
+      height: 20px;
+      transition: transform 0.2s ease-out;
+
+      &:hover {
+        transform: scale(1.25);
       }
     }
   }
-  
+
+  .centralSection {
+    color: white;
+    font-family: "Neue Machina";
+    font-size: 5em;
+    transform: translateZ(0); /*for older browsers*/
+    will-change: transform;
+    opacity: 0;
+    transform: translateY(50px);
+    padding: 30px 0 30px 0;
+    hyphens: manual;
+    overflow-wrap: break-word;
+
+    @include mobileandtablet {
+      font-size: 2.8em;
+
+      p {
+        text-align: left !important;
+      }
+
+      .firstline {
+        justify-content: left !important;
+      }
+    }
+    a {
+      transition: 0.3s;
+    }
+    a:hover {
+      color: black;
+      background-color: white;
+    }
+
+
+    p {
+      // word-break: break-all;
+      overflow-wrap: break-word;
+      filter: url("#liquify");
+
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (display: flow-root) {
+          filter: none;
+        }
+      }
+
+      // @include forTactile {
+      //   filter: none;
+      // }
+    }
+
+    // span {
+    //   color: transparent;
+    //   text-shadow: 0 0 13px rgb(255, 255, 255);
+    // }
+
+    .firstline,
+    .fourthline,
+    .secondline {
+      font-family: "Neue Machina Bold";
+    }
+    .secondline {
+      text-align: right;
+      width: 90%;
+    }
+    .thirdline {
+      text-align: center;
+      font-family: "Neue Machina";
+    }
+
+    .firstline {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+    }
+
+    .fourthline {
+      text-align: center;
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .footer {
+    font-family: "Neue Machina Light";
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .contactLinks {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        transform: translateY(100%);
+      }
+
+      a {
+        margin-right: 20px;
+        transition: 0.3s;
+        &:hover {
+          color: black;
+          background-color: white;
+        }
+      }
+    }
+
+    .cities {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      transform: translateY(100%);
+
+      p:nth-of-type(1) {
+        text-decoration: line-through;
+        margin-right: 20px;
+      }
+
+      // p {
+      //   cursor: pointer;
+      // }
+    }
+  }
+}

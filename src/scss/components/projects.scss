@@ -1,51 +1,207 @@
 #Projects {
-    z-index: 999;
+    z-index: 0;
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     top: 0;
+    pointer-events: none;
 
+    //TRANSITION
     .bandsContainer {
         height: 100vh;
-        font-family: "Neue Machina";
+        font-family: "Neue Machina Bold";
         top: 0;
 
         .band {
             width: max-content;
-            height: 25%;
+            height: 12.5%;
             top: 0;
+
+            .bandContent {
+                display: flex;
+                color: black;
+                background-color: white;
+                font-size: 12vh;
+                height: 100%;
+                // padding-top: 20px;
+                align-items: center;
+
+                span {
+                    font-size: 8vh;
+                }
+            }
+
+            p {
+                padding-top: 15px;
+            }
+
         }
 
         .one {
             // transform: rotate(10deg);
             left: 100%;
             top: 0;
-
         }
         .two {
             // transform: rotate(-10deg);
             right: 100%;
             top: 0;
-
         }
         .three {
             // transform: rotate(12deg);
             left: 100%;
-
         }
         .four {
             // transform: rotate(-12deg);
             right: 100%;
-
         }
-    
-        p {
-            color: black;
-            background-color: white;
-            font-size: 25vh;
+    }
+
+    //PROJECT LIST
+    .projectsSection {
+        position: absolute;
+        top: 0;
+        background-color: black;
+        width: 100vw;
+        min-height: 100vh;
+        opacity: 0;
+        padding: 80px 10vw;
+        box-sizing: border-box;
+        height: 100vh;
+
+        .header {
+            color: white;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            font-family: "Lausanne";
+            font-size: 15px;
+            border-bottom: 2px solid white;
+            padding-bottom: 8px;
+        }
+
+        .projectsList {
             height: 100%;
-            display: block;
-            padding-top: 20px;
+            // height: -moz-available;          /* WebKit-based browsers will ignore this. */
+            // height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            // height: fill-available;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .project {
+                color: white;
+                font-size: 4em;
+                font-family: "Neue Machina";
+                padding: 10px 0;
+                transition: background-color .2s;
+                display: flex;
+
+                &:nth-child(even){
+                    justify-content: flex-start;
+                    flex-direction: row-reverse;
+
+                    @include mobileOnly {
+                        justify-content: inherit!important;
+                        flex-direction: row!important;
+                        .details {
+                            text-align: left!important;
+                        }
+
+                    }
+
+
+
+                }
+
+                @include mobileOnly {
+                    justify-content: space-around;
+                }
+
+
+                .number {
+                    font-size: 7vh;
+
+                    @include mobileOnly {
+                        font-size: 5vh;
+                        margin-right: 30px!important;
+                        margin-left: 0px !important;
+                    }
+
+                    @include desktop {
+                        margin-right: 30px;
+                    }
+
+                }
+
+                .projectInfos {
+                    color: white;
+                    font-size: 4vw;
+                    font-family: "Neue Machina Bold";
+
+                    @include mobileOnly {
+                        max-width: 230px;
+                        width: 230px;
+                        // text-align: center;
+                        font-size: 5.9vw;
+                    }
+
+                    .details {
+                        font-size: 1.1vw;
+                        font-family: "Neue Machina Light";
+                        text-align: left;
+
+                        &.right {
+                            text-align: right;
+                        }
+
+                        @include mobileOnly {
+                            font-size: 3.5vw;
+                            padding-top: 1vh;
+                        }
+
+                    }
+                }
+
+                .ticker {
+                    white-space: nowrap;
+                }
+                &:hover {
+                    color: white;
+                    background-color: black;
+                }
+
+
+
+                // h1:after {
+                //   margin-left: 10px;
+                //   margin-right: 10px;
+                //   content: "   ";
+                // }
+
+            }
+
+            .project .number:nth-child(odd){
+                margin-left: 30px;
+                // margin-right: 0px;
+            }
 
         }
     }
-}   
+
+    .aboutSection {
+        background-color: black;
+        position: relative;
+        height: 50vh;
+        font-family: 'Neue Machina';
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+
+        }
+    }
+}
